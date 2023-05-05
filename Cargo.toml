@@ -1,0 +1,17 @@
+[package]
+name = "ddns-server"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+cloudflare = { version = "0.10.1", features = ["blocking"]}
+lazy_static = "1.4.0"
+regex = "1.8.1"
+serde = "1.0.160"
+serde_qs = "0.12.0"
+tiny_http = "0.12.0"
+
+[patch.crates-io]
+cloudflare = { git = "https://github.com/Jeidnx/cloudflare-rs", branch = "fix-api-fields"}

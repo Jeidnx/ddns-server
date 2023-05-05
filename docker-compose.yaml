@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  ddns-server:
+    build: github.com/jeidnx/ddns-server
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    environment:
+      - "API_TOKEN="   # Cloudflare API token. Make sure it has the correct scopes.
+      - "DOMAINS="     # The domains to keep updated. Seperate multiple domains with a space
